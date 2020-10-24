@@ -1,16 +1,25 @@
 extends KinematicBody
 
+signal died
+
 export(PackedScene) var tail_segment
 
-var dir = Vector3(0,0,1)
+var dir = Vector3(0,0,-1)
 var current_rot = 0
 var directions = [Vector3(0,0,1),Vector3(-1,0,0),Vector3(0,0,-1),Vector3(1,0,0)]
 var mesh_dirs = [Vector3(0,0,0),Vector3(0,270,0),Vector3(0,180,0),Vector3(0,90,0)]
 
+var frozen = false
 var mode = "Cheese"
 var tail
 
+func _ready():
+	current_rot = directions.find(dir)
+	rotation_degrees = mesh_dirs[current_rot]
+
 func _process(delta):
+	if frozen:
+		return
 	if Input.is_action_just_pressed("turn_left"):
 		change_rot(-1)
 	elif Input.is_action_just_pressed("turn_right"):
@@ -77,6 +86,8 @@ func add_tail():
 func lose_tail():
 	if tail == null:
 		print("DIEEE")
+		frozen = true
+		emit_signal("died")
 	else:
 		tail.damage()
 		GAME.go_slower()
@@ -103,4 +114,6 @@ func move():
 		tail.move(previous_pos,current_rot)
 		
 func _on_Beat_timeout():
+	if frozen:
+		return
 	move()

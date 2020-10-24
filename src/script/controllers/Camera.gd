@@ -7,8 +7,6 @@ onready var tracker = get_parent().get_node("PlayerTracker")
 onready var sprites = get_tree().get_nodes_in_group("3dSprite")
 
 func _process(delta):
-	#if !GAME.race_on:
-		#return
 	global_transform.origin = global_transform.origin.linear_interpolate(target.global_transform.origin, camera_speed*delta)#target.global_transform.origin
 	look_at(tracker.global_transform.origin,Vector3.UP)
 	if sprites.empty():
