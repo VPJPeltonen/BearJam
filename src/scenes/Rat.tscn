@@ -6,14 +6,15 @@
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_unshaded = true
-albedo_color = Color( 0.772549, 0.94902, 0.0431373, 1 )
+albedo_color = Color( 1, 0.160784, 0.0509804, 1 )
 
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[node name="Food" type="Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.887194, 4.16714, -8.9985 )
+[node name="Rat" type="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.887194, 2.81641, -8.9985 )
 script = ExtResource( 1 )
+type = "Rat"
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )

@@ -32,6 +32,27 @@ func food_eaten(type):
 		"Cheese":
 			add_tail()
 			GAME.go_faster()
+		"Rat":
+			$Visuals/Red.show()
+			$Visuals/Blue.hide()
+			$Visuals/Yellow.hide()
+			$Visuals/Green.hide()
+			add_tail()
+			GAME.go_faster()
+		"Frog":
+			$Visuals/Red.hide()
+			$Visuals/Blue.hide()
+			$Visuals/Yellow.hide()
+			$Visuals/Green.show()
+			add_tail()
+			GAME.go_faster()
+		"Beetle":
+			$Visuals/Red.hide()
+			$Visuals/Blue.show()
+			$Visuals/Yellow.hide()
+			$Visuals/Green.hide()
+			add_tail()
+			GAME.go_faster()
 		_:
 			pass
 
