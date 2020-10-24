@@ -67,7 +67,7 @@ func add_tail():
 
 func lose_tail():
 	if tail == null:
-		print("DIE")
+		print("DIEEE")
 	else:
 		tail.damage()
 
