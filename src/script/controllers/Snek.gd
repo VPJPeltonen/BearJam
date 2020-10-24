@@ -104,12 +104,14 @@ func lose_tail():
 		tail.damage()
 		GAME.go_slower()
 
-func move():
+func horizontal_movement():
 	if $Area.get_overlapping_bodies().size() == 0 :
 		move_and_collide(Vector3(0,-1,0)*GAME.grid_size)
 	if jump_prepared:
 		jump_prepared = false
 		move_and_collide(Vector3(0,1,0)*GAME.grid_size)
+		
+func move():
 	$Move.play()
 	var previous_pos = global_transform.origin
 	var collission
@@ -128,15 +130,15 @@ func move():
 				collission.collider.queue_free()
 				$Unlock.play()
 				return
-			#move()
 		$Collide.play()
 		global_transform.origin = previous_pos
 		lose_tail()
 	elif tail != null:
 		tail.move(previous_pos,current_rot)
-
+		
 		
 func _on_Beat_timeout():
 	if frozen:
 		return
+	horizontal_movement()
 	move()
