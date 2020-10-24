@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/meshes/tileset_libv2.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://src/scenes/Snek.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/scenes/Food.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/script/controllers/Camera.gd" type="Script" id=5]
 [ext_resource path="res://src/script/controllers/PlayerTracker.gd" type="Script" id=6]
+[ext_resource path="res://src/script/controllers/Locked.gd" type="Script" id=7]
 [ext_resource path="res://src/scenes/Rat.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/scenes/Frog.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/scenes/Beetle.tscn" type="PackedScene" id=10]
@@ -13,6 +14,10 @@
 [sub_resource type="Environment" id=1]
 background_mode = 1
 background_energy = 0.0
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="BoxShape" id=3]
 
 [node name="TestMap" type="Spatial"]
 
@@ -74,4 +79,23 @@ script = ExtResource( 6 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+
+[node name="Locked" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.02304, 2.98453, 1.02804 )
+script = ExtResource( 7 )
+
+[node name="Red" type="MeshInstance" parent="Locked"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Green" type="MeshInstance" parent="Locked"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Blue" type="MeshInstance" parent="Locked"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Locked"]
+shape = SubResource( 3 )
 [connection signal="timeout" from="Beat" to="Snek" method="_on_Beat_timeout"]
