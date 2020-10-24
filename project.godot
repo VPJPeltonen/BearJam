@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Bear"
+run/main_scene="res://src/scenes/TestMap.tscn"
 config/icon="res://icon.png"
 
 [autoload]
