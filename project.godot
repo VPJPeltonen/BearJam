@@ -18,6 +18,27 @@ _global_script_class_icons={
 config/name="Bear"
 config/icon="res://icon.png"
 
+[autoload]
+
+GAME="*res://src/script/singletons/GAME.gd"
+
+[input]
+
+turn_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+turn_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+special={
+"deadzone": 0.5,
+"events": [  ]
+}
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
