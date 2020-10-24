@@ -44,11 +44,20 @@ func add_tail():
 	else:
 		tail.add_tail()
 
+func lose_tail():
+	if tail == null:
+		print("DIE")
+	else:
+		pass
+
 func _on_Beat_timeout():
+	$Move.play()
 	var previous_pos = global_transform.origin
 	var collission = move_and_collide(dir*GAME.grid_size)
 	if collission != null:
-		print("DIE")
+		$Collide.play()
+		global_transform.origin = previous_pos
+		lose_tail()
 	elif tail != null:
 		tail.move(previous_pos,current_rot)
 	#global_transform.origin += dir*GAME.grid_size

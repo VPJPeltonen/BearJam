@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/script/controllers/Snek.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Tail_Segment.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/audio/qubodupImpactMeat01.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/qubodupImpactWood.ogg" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -49,3 +51,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.38441, -4.32287 )
 
 [node name="View_Pos" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.88097, 5.72372 )
+
+[node name="Move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="Collide" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
