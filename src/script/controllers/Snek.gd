@@ -78,6 +78,8 @@ func _on_Beat_timeout():
 	#round the vector coordinates to stop driftings
 	global_transform.origin = Vector3(round(global_transform.origin.x),round(global_transform.origin.y),round(global_transform.origin.z))
 	if collission != null:
+		if collission.collider.is_in_group("Dirt"):
+			print("DIIRT")
 		$Collide.play()
 		global_transform.origin = previous_pos
 		lose_tail()
