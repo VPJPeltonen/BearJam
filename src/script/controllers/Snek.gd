@@ -54,6 +54,7 @@ func _on_Beat_timeout():
 	$Move.play()
 	var previous_pos = global_transform.origin
 	var collission = move_and_collide(dir*GAME.grid_size)
+	global_transform.origin = Vector3(round(global_transform.origin.x),round(global_transform.origin.y),round(global_transform.origin.z))
 	if collission != null:
 		$Collide.play()
 		global_transform.origin = previous_pos
