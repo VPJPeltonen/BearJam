@@ -35,6 +35,6 @@ shape = SubResource( 3 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
-billboard = 1
+billboard = 2
 frames = SubResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_Food_body_entered"]

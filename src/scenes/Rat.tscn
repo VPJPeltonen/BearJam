@@ -73,7 +73,7 @@ shape = SubResource( 3 )
 "3dSprite",
 ]]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.06968, 0 )
-billboard = 1
+billboard = 2
 frames = SubResource( 8 )
 animation = "right"
 script = ExtResource( 3 )

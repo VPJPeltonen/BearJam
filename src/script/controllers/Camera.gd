@@ -22,8 +22,6 @@ func _process(delta):
 		sprite_forward = sprite_forward.normalized()
 		var dot = view_vector.dot(sprite_forward)
 		var rot_dot = view_vector.x*-sprite_forward.z + view_vector.z*sprite_forward.x
-		print("rot " + str(rot_dot))
-		print("dot " + str(dot))
 		if(rot_dot > 0):
 			if dot > 0.5:
 				sprite.play("back")

@@ -7,6 +7,7 @@ var current_rot = 0
 var directions = [Vector3(0,0,1),Vector3(-1,0,0),Vector3(0,0,-1),Vector3(1,0,0)]
 var mesh_dirs = [Vector3(0,0,0),Vector3(0,270,0),Vector3(0,180,0),Vector3(0,90,0)]
 
+var mode = "Cheese"
 var tail
 
 func _process(delta):
@@ -30,9 +31,15 @@ func change_rot(amount):
 func food_eaten(type):
 	match type:
 		"Cheese":
+			mode = "Yellow"
 			add_tail()
 			GAME.go_faster()
+			$Visuals/Red.hide()
+			$Visuals/Blue.hide()
+			$Visuals/Yellow.show()
+			$Visuals/Green.hide()
 		"Rat":
+			mode = "Red"
 			$Visuals/Red.show()
 			$Visuals/Blue.hide()
 			$Visuals/Yellow.hide()
@@ -40,6 +47,7 @@ func food_eaten(type):
 			add_tail()
 			GAME.go_faster()
 		"Frog":
+			mode = "Green"
 			$Visuals/Red.hide()
 			$Visuals/Blue.hide()
 			$Visuals/Yellow.hide()
@@ -47,6 +55,7 @@ func food_eaten(type):
 			add_tail()
 			GAME.go_faster()
 		"Beetle":
+			mode = "Blue"
 			$Visuals/Red.hide()
 			$Visuals/Blue.show()
 			$Visuals/Yellow.hide()
@@ -70,8 +79,9 @@ func lose_tail():
 		print("DIEEE")
 	else:
 		tail.damage()
+		GAME.go_slower()
 
-func _on_Beat_timeout():
+func move():
 	$Move.play()
 	var previous_pos = global_transform.origin
 	var collission = move_and_collide(dir*GAME.grid_size)
@@ -80,9 +90,17 @@ func _on_Beat_timeout():
 	if collission != null:
 		if collission.collider.is_in_group("Dirt"):
 			print("DIIRT")
+		if collission.collider.is_in_group("Door"):
+			if collission.collider.color == mode:
+				collission.collider.queue_free()
+				$Unlock.play()
+				return
+			#move()
 		$Collide.play()
 		global_transform.origin = previous_pos
 		lose_tail()
 	elif tail != null:
 		tail.move(previous_pos,current_rot)
-	#global_transform.origin += dir*GAME.grid_size
+		
+func _on_Beat_timeout():
+	move()
