@@ -2,7 +2,7 @@ extends Position3D
 
 var track_speed = 1.0
 
-onready var snek = get_parent().get_node("Snek")
+onready var snek = get_parent().get_node("Snek/View_Pos")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
