@@ -56,7 +56,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Rat" type="Area"]
+[node name="Rat" type="Area" groups=[
+"AI",
+]]
 script = ExtResource( 1 )
 type = "Rat"
 
