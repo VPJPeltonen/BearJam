@@ -5,7 +5,7 @@ export(PackedScene) var tail_segment
 var dir = Vector3(0,0,1)
 var current_rot = 0
 var directions = [Vector3(0,0,1),Vector3(-1,0,0),Vector3(0,0,-1),Vector3(1,0,0)]
-var mesh_dirs = [Vector3(0,0,0),Vector3(0,90,0),Vector3(0,180,0),Vector3(0,270,0)]
+var mesh_dirs = [Vector3(0,0,0),Vector3(0,270,0),Vector3(0,180,0),Vector3(0,90,0)]
 
 var tail
 
@@ -31,6 +31,7 @@ func food_eaten(type):
 	match type:
 		"Cheese":
 			add_tail()
+			GAME.go_faster()
 		_:
 			pass
 
