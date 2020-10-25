@@ -17,6 +17,8 @@ var speed_prepared = false
 var jump_prepared = false
 var break_prepared = false
 
+var jump_cooldown = 0
+
 func _ready():
 	current_rot = directions.find(dir)
 	rotation_degrees = mesh_dirs[current_rot]
@@ -33,7 +35,9 @@ func _process(delta):
 			"Red":
 				speed_prepared = true
 			"Green":
-				jump_prepared = true
+				if jump_cooldown <= 0:
+					jump_prepared = true
+					jump_cooldown = 2
 			"Blue":
 				break_prepared = true
 
@@ -140,5 +144,6 @@ func move():
 func _on_Beat_timeout():
 	if frozen:
 		return
+	jump_cooldown -= 1
 	horizontal_movement()
 	move()
