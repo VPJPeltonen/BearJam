@@ -16,43 +16,43 @@ points = PoolVector3Array( 0, 0, 1.5, 0, 0, 1.5, 0, 0, 1.5, 0, 0, 1.5, 0, 0, 1.5
 [sub_resource type="AtlasTexture" id=4]
 flags = 2
 atlas = ExtResource( 2 )
-region = Rect2( 128, 0, 128, 128 )
+region = Rect2( 128, 1536, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 2
 atlas = ExtResource( 2 )
-region = Rect2( 128, 1536, 128, 128 )
+region = Rect2( 128, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 2
 atlas = ExtResource( 2 )
-region = Rect2( 128, 512, 128, 128 )
+region = Rect2( 128, 1024, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 2
 atlas = ExtResource( 2 )
-region = Rect2( 128, 1024, 128, 128 )
+region = Rect2( 128, 512, 128, 128 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "back",
+"name": "front",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
-"name": "front",
+"name": "back",
 "speed": 5.0
 } ]
 

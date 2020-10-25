@@ -13,84 +13,84 @@ albedo_color = Color( 1, 0.160784, 0.0509804, 1 )
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[sub_resource type="AtlasTexture" id=9]
-flags = 2
-atlas = ExtResource( 2 )
-region = Rect2( 384, 768, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=4]
 flags = 2
 atlas = ExtResource( 2 )
 region = Rect2( 128, 768, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=5]
 flags = 2
 atlas = ExtResource( 2 )
-region = Rect2( 256, 768, 128, 128 )
+region = Rect2( 384, 768, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=6]
 flags = 2
 atlas = ExtResource( 2 )
 region = Rect2( 0, 768, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=7]
+flags = 2
+atlas = ExtResource( 2 )
+region = Rect2( 256, 768, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=8]
 flags = 2
 atlas = ExtResource( 2 )
 region = Rect2( 256, 1024, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=9]
 flags = 2
 atlas = ExtResource( 2 )
 region = Rect2( 0, 1024, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=10]
 flags = 2
 atlas = ExtResource( 2 )
 region = Rect2( 128, 1024, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=11]
 flags = 2
 atlas = ExtResource( 2 )
 region = Rect2( 384, 1024, 128, 128 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 9 ) ],
-"loop": true,
-"name": "right",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "back",
+"name": "right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 12 ) ],
+"frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "front",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 14 ) ],
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "back",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
 "loop": true,
 "name": "angry_back",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ) ],
+"frames": [ SubResource( 9 ) ],
 "loop": true,
 "name": "angry_front",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ) ],
+"frames": [ SubResource( 10 ) ],
 "loop": true,
 "name": "angry_left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ) ],
+"frames": [ SubResource( 11 ) ],
 "loop": true,
 "name": "angry_right",
 "speed": 5.0
@@ -117,7 +117,7 @@ shape = SubResource( 3 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.06968, 0 )
 billboard = 2
 alpha_cut = 2
-frames = SubResource( 8 )
+frames = SubResource( 12 )
 animation = "angry_right"
 script = ExtResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Food_body_entered"]
