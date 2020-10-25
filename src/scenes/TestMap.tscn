@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/meshes/tileset_libv2.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://src/scenes/Snek.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://src/scenes/Map.gd" type="Script" id=12]
 [ext_resource path="res://src/other/default_world.tres" type="Environment" id=13]
 [ext_resource path="res://src/scenes/UI/LoseScreen.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/scenes/Dirt.tscn" type="PackedScene" id=15]
 
 [node name="TestMap" type="Spatial"]
 script = ExtResource( 12 )
@@ -78,6 +79,8 @@ script = ExtResource( 6 )
 environment = ExtResource( 13 )
 
 [node name="Locked" parent="." instance=ExtResource( 7 )]
+
+[node name="Dirt" parent="." instance=ExtResource( 15 )]
 
 [node name="AIDirector" type="Spatial" parent="."]
 script = ExtResource( 11 )

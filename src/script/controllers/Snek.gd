@@ -127,8 +127,10 @@ func move():
 	#round the vector coordinates to stop driftings
 	global_transform.origin = Vector3(round(global_transform.origin.x),round(global_transform.origin.y),round(global_transform.origin.z))
 	if collission != null:
-		if collission.collider.is_in_group("Dirt"):
-			print("DIIRT")
+		if collission.collider.is_in_group("Breakable") and mode == "Blue":
+			collission.collider.queue_free()
+			$Break.play()
+			return
 		if collission.collider.is_in_group("Door"):
 			if collission.collider.color == mode:
 				collission.collider.queue_free()
