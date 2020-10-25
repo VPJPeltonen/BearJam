@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/textures/UI stuff/exit.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/UI stuff/title.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/UI stuff/credits.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/UI stuff/start.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/UI stuff/controls.png" type="Texture" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 0.5
+margin_left = -100.583
+margin_top = -96.9921
+margin_right = 1116.42
+margin_bottom = 386.008
+rect_scale = Vector2( 0.664865, 0.664865 )
+rect_pivot_offset = Vector2( 629.212, 305.161 )
+icon = ExtResource( 2 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Button"]
+anchor_right = 0.5
+margin_left = 283.0
+margin_top = 510.0
+margin_right = 30.5
+margin_bottom = 602.0
+rect_pivot_offset = Vector2( 629.212, 305.161 )
+icon = ExtResource( 4 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Button"]
+anchor_right = 0.5
+margin_left = 687.0
+margin_top = 733.0
+margin_right = 353.5
+margin_bottom = 852.0
+rect_pivot_offset = Vector2( 629.212, 305.161 )
+icon = ExtResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Button"]
+anchor_right = 0.5
+margin_left = 540.0
+margin_top = 650.0
+margin_right = 347.5
+margin_bottom = 752.0
+rect_pivot_offset = Vector2( 629.212, 305.161 )
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="Button"]
+anchor_right = 0.5
+margin_left = 402.0
+margin_top = 541.0
+margin_right = 261.5
+margin_bottom = 682.0
+rect_pivot_offset = Vector2( 629.212, 305.161 )
+icon = ExtResource( 5 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
