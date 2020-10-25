@@ -1,6 +1,7 @@
 extends KinematicBody
 
 signal died
+signal win(score)
 
 export(PackedScene) var tail_segment
 
@@ -12,6 +13,8 @@ var mesh_dirs = [Vector3(0,0,0),Vector3(0,270,0),Vector3(0,180,0),Vector3(0,90,0
 var frozen = false
 var mode = "Cheese"
 var tail
+
+var score = 0
 
 var speed_prepared = false
 var jump_prepared = false
@@ -75,6 +78,7 @@ func food_eaten(type):
 			pass
 
 func add_tail():
+	score += 1
 	if tail == null:
 		tail = tail_segment.instance()
 		get_parent().add_child(tail)
@@ -84,6 +88,7 @@ func add_tail():
 		tail.add_tail()
 
 func lose_tail():
+	score -= 1
 	$Hurt.play()
 	if tail == null:
 		print("DIEEE")
@@ -114,6 +119,10 @@ func move():
 	#round the vector coordinates to stop driftings
 	global_transform.origin = Vector3(round(global_transform.origin.x),round(global_transform.origin.y),round(global_transform.origin.z))
 	if collission != null:
+		if collission.collider.is_in_group("Finish"):
+			frozen = true
+			emit_signal("win",score)
+			return
 		if collission.collider.is_in_group("Breakable") and mode == "Blue":
 			collission.collider.queue_free()
 			$Break.play()

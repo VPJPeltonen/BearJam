@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://import/waterBlock.glb" type="PackedScene" id=1]
 [ext_resource path="res://import/water base.png" type="Texture" id=2]
@@ -295,6 +295,9 @@ nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0, 2, 1, 0, 1, 3, 0, 5, 1, 6
 [sub_resource type="ShaderMaterial" id=31]
 shader = SubResource( 30 )
 
+[sub_resource type="BoxShape" id=32]
+extents = Vector3( 2.21322, 1.84034, 2.56037 )
+
 [node name="waterBlock" instance=ExtResource( 1 )]
 
 [node name="WATER ARMETURE" parent="." index="0"]
@@ -303,6 +306,12 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
 [node name="Plane011" parent="WATER ARMETURE/Skeleton" index="0"]
 material/0 = SubResource( 12 )
 material/1 = SubResource( 31 )
+
+[node name="StaticBody" type="StaticBody" parent="WATER ARMETURE/Skeleton/Plane011" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="WATER ARMETURE/Skeleton/Plane011/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19873, 0 )
+shape = SubResource( 32 )
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "WaterMove"
