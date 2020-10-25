@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/textures/UI stuff/back.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/UI stuff/controls gamepad.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/UI stuff/controls keyboard.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button3" type="Button" parent="."]
+margin_top = 495.829
+margin_right = 265.0
+margin_bottom = 662.829
+rect_scale = Vector2( 0.621032, 0.621032 )
+icon = ExtResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Button3"]
+margin_left = 88.7107
+margin_top = -798.395
+margin_right = 941.711
+margin_bottom = -223.395
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Button3"]
+margin_left = 460.613
+margin_top = -433.317
+margin_right = 1668.61
+margin_bottom = 158.683
+icon = ExtResource( 2 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

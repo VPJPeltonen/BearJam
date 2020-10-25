@@ -1,0 +1,77 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "slightlyrotate"
+length = 10.0
+loop = true
+step = 0.025
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:rect_scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.664865, -0.25, 0, 0.25, 0, 0.699, -0.25, 0, 0.302713, 0.0198087, 0.758, -0.283803, -0.0127805, 0.646824, 0.0359778, 0.69, -0.492404, 0.0450615, 0.273994, -0.0248592, 0.689, -0.184808, -0.0238592, 0.157334, 0.0255198, 0.857, -0.881754, 0.00293738, 0.7879, -0.000448585, 0.664865, -1.04719, -0.00300831, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.45, 1.625, 2.6, 4.4, 6.575, 10.025 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:rect_scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0.664865, -0.25, 0, 0.25, 0, 0.665, -0.25, 0, 0.242685, -0.0133013, 0.665, -0.218087, -0.0370033, 0.343026, 0.0425676, 0.592, 0, 0.135884, 0.0374789, -0.0384952, 0.491, -0.759607, 0.00663587, 0.827932, -0.00690809, 0.726, -0.426469, -0.0421343, 0.33993, 0.0188136, 0.664865, -0.513447, 0.0393167, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.25, 0.875, 3.425, 4.4, 6.325, 10.025 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:rect_rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.359144, 0.0416135, 1.09154, -0.570328, 2.44676, -0.380346, -0.216352, 0.427109, 0.0540876, -0.636254, -0.673092, 1.19936, 0.393849, -0.703143, 4.66436, -0.46855, 0, 0.612619, 0.0540876, -3.7, -1.06001, 2.73922, 0.595959, -1.42555, 7.96372, -0.300384, -1.89308, 0.383901, 2.16352, -2.8, -2.00024, 1.0279, 0.517923, -0.27021, 0, -0.47239, -0.203551, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.975, 1.925, 3.575, 4.075, 5.85, 6.5, 9.5, 10.025 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:rect_min_size:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath(".:rect_min_size:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
