@@ -31,6 +31,8 @@ func damage():
 		tail.damage()
 	
 func get_tail_spawn_pos():
+	if previous_pos == null:
+		previous_pos = -dir*GAME.grid_size
 	return previous_pos
 
 func add_tail():

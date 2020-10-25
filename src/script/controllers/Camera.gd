@@ -22,17 +22,17 @@ func _process(delta):
 		var rot_dot = view_vector.x*-sprite_forward.z + view_vector.z*sprite_forward.x
 		if(rot_dot > 0):
 			if dot > 0.5:
-				sprite.play("back")
+				sprite.play_animation("back")
 			elif dot < -0.5:
-				sprite.play("front")
+				sprite.play_animation("front")
 			else:
-				sprite.play("left")
+				sprite.play_animation("left")
 		elif(rot_dot < 0):		
 			if dot > 0.5:
-				sprite.play("back")
+				sprite.play_animation("back")
 			elif dot < -0.5:
-				sprite.play("front")
+				sprite.play_animation("front")
 			else:
-				sprite.play("right")
+				sprite.play_animation("right")
 		else:
-			sprite.play("front")
+			sprite.play_animation("front")
