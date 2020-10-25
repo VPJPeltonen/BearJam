@@ -9,6 +9,82 @@
 [ext_resource path="res://assets/textures/UI stuff/controls.png" type="Texture" id=7]
 [ext_resource path="res://src/scenes/FinalMap.tscn" type="PackedScene" id=8]
 
+[sub_resource type="Animation" id=5]
+resource_name = "slightlyrotate"
+length = 10.0
+loop = true
+step = 0.025
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_size:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_size:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:rect_scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.664865, -0.25, 0, 0.25, 0, 0.699, -0.25, 0, 0.302713, 0.0198087, 0.758, -0.283803, -0.0127805, 0.646824, 0.0359778, 0.69, -0.492404, 0.0450615, 0.273994, -0.0248592, 0.689, -0.184808, -0.0238592, 0.157334, 0.0255198, 0.857, -0.881754, 0.00293738, 0.7879, -0.000448585, 0.664865, -1.04719, -0.00300831, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.45, 1.625, 2.6, 4.4, 6.575, 10.025 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:rect_scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0.664865, -0.25, 0, 0.25, 0, 0.665, -0.25, 0, 0.242685, -0.0133013, 0.665, -0.218087, -0.0370033, 0.343026, 0.0425676, 0.592, 0, 0.135884, 0.0374789, -0.0384952, 0.491, -0.759607, 0.00663587, 0.827932, -0.00690809, 0.726, -0.426469, -0.0421343, 0.33993, 0.0188136, 0.664865, -0.513447, 0.0393167, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.25, 0.875, 3.425, 4.4, 6.325, 10.025 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:rect_rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.359144, 0.0416135, 1.09154, -0.570328, 2.44676, -0.380346, -0.216352, 0.427109, 0.0540876, -0.636254, -0.673092, 1.19936, 0.393849, -0.703143, 4.66436, -0.46855, 0, 0.612619, 0.0540876, -3.7, -1.06001, 2.73922, 0.595959, -1.42555, 7.96372, -0.300384, -1.89308, 0.383901, 2.16352, -2.8, -2.00024, 1.0279, 0.517923, -0.27021, 0, -0.47239, -0.203551, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.975, 1.925, 3.575, 4.075, 5.85, 6.5, 9.5, 10.025 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath(".:rect_min_size:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath(".:rect_min_size:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray(  ),
+"times": PoolRealArray(  )
+}
+
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 344, 86 )
@@ -24,9 +100,6 @@ region_rect = Rect2( 0, 0, 404, 96 )
 [sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 456, 135 )
-
-[sub_resource type="Animation" id=5]
-resource_name = "slightlyrotate"
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 2 )
@@ -44,7 +117,8 @@ margin_left = -100.583
 margin_top = -96.9921
 margin_right = 1116.42
 margin_bottom = 386.008
-rect_scale = Vector2( 0.664865, 0.664865 )
+rect_rotation = -3.75382
+rect_scale = Vector2( 0.834987, 0.654918 )
 rect_pivot_offset = Vector2( 629.212, 305.161 )
 icon = ExtResource( 4 )
 flat = true
@@ -52,12 +126,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Button"]
+pause_mode = 1
+method_call_mode = 1
+anims/slightlyrotate = SubResource( 5 )
+
 [node name="StartButton" type="Button" parent="Node2D/Button"]
 anchor_right = 0.5
-margin_left = 283.0
-margin_top = 510.0
-margin_right = 127.0
-margin_bottom = 602.0
+margin_left = 297.413
+margin_top = 464.182
+margin_right = 44.9116
+margin_bottom = 556.182
+rect_rotation = -1.68822
 rect_pivot_offset = Vector2( 629.212, 305.161 )
 custom_styles/hover = SubResource( 1 )
 icon = ExtResource( 6 )
@@ -68,10 +148,10 @@ __meta__ = {
 
 [node name="ExitButton" type="Button" parent="Node2D/Button"]
 anchor_right = 0.5
-margin_left = 687.0
-margin_top = 733.0
-margin_right = 450.0
-margin_bottom = 852.0
+margin_left = 675.666
+margin_top = 688.402
+margin_right = 342.165
+margin_bottom = 807.402
 rect_pivot_offset = Vector2( 629.212, 305.161 )
 custom_styles/hover = SubResource( 2 )
 icon = ExtResource( 3 )
@@ -82,10 +162,10 @@ __meta__ = {
 
 [node name="CreditsButton" type="Button" parent="Node2D/Button"]
 anchor_right = 0.5
-margin_left = 540.0
-margin_top = 650.0
-margin_right = 444.0
-margin_bottom = 752.0
+margin_left = 537.307
+margin_top = 596.986
+margin_right = 344.805
+margin_bottom = 698.986
 rect_pivot_offset = Vector2( 629.212, 305.161 )
 custom_styles/hover = SubResource( 3 )
 icon = ExtResource( 5 )
@@ -96,10 +176,11 @@ __meta__ = {
 
 [node name="ControlsButton" type="Button" parent="Node2D/Button"]
 anchor_right = 0.5
-margin_left = 402.0
-margin_top = 541.0
-margin_right = 358.0
-margin_bottom = 682.0
+margin_left = 373.35
+margin_top = 496.733
+margin_right = 232.848
+margin_bottom = 637.733
+rect_rotation = -0.0138138
 rect_pivot_offset = Vector2( 629.212, 305.161 )
 custom_styles/hover = SubResource( 4 )
 icon = ExtResource( 7 )
@@ -107,9 +188,6 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Button"]
-anims/slightlyrotate = SubResource( 5 )
 
 [node name="Map" type="Spatial" parent="."]
 
