@@ -15,6 +15,9 @@ onready var current_rot = directions.find(dir)
 
 func on_beat():
 	angry_cooldown -= 1
+	if angry_cooldown <= 0:
+		angry = !angry
+		angry_cooldown = 3
 	$AnimatedSprite3D.forward = -dir
 	match type:
 		"Frog":
