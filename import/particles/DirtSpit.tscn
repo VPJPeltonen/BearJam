@@ -1,8 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/models/dirtBlock.glb" type="PackedScene" id=1]
 [ext_resource path="res://import/particles/dirtPart.tres" type="ArrayMesh" id=2]
-[ext_resource path="res://assets/models/ground.glb" type="PackedScene" id=3]
 
 [sub_resource type="Curve" id=1]
 min_value = -200.0
@@ -19,7 +17,6 @@ colors = PoolColorArray( 1, 1, 1, 1, 0.541504, 0.541504, 0.541504, 0.147541, 1, 
 [sub_resource type="Animation" id=4]
 resource_name = "emit"
 length = 0.78
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("../CPUParticles2:emitting")
 tracks/0/interp = 1
@@ -47,48 +44,17 @@ tracks/1/keys = {
 
 [node name="Spatial" type="Spatial"]
 
-[node name="ground" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, 0, -4.52739, 0 )
-
-[node name="dirtBlock" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, 0, -4.52739, 0 )
-visible = false
-
-[node name="dirtBlock2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, -8, -4.52739, 0 )
-
-[node name="dirtBlock3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, 8, -4.52739, 0 )
-
-[node name="dirtBlock4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, 8, -4.52739, 8 )
-
-[node name="dirtBlock5" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, 0, -4.52739, 8 )
-
-[node name="dirtBlock6" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, -8, -4.52739, 8 )
-
-[node name="dirtBlock8" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, 8, -4.52739, -8 )
-
-[node name="dirtBlock9" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, 0, -4.52739, -8 )
-
-[node name="dirtBlock10" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 0.987812, 0, 0, 0, 1, -8, -4.52739, -8 )
-
 [node name="CPUParticles2" type="CPUParticles" parent="."]
 transform = Transform( 0.697587, -0.00540751, 0.71647, 0.215709, 0.787532, -0.201275, -0.683258, 0.243108, 0.667952, -0.472628, 0.296012, -0.00475104 )
 lifetime = 2.31
-speed_scale = 1.1
+speed_scale = 1.4
 explosiveness = 0.9
 mesh = ExtResource( 2 )
 direction = Vector3( 0, 1, -1 )
 spread = 33.06
 gravity = Vector3( 0, -20, 0 )
 initial_velocity = 12.0
-angular_velocity = 10.0
+angular_velocity = 246.8
 angular_velocity_random = 1.0
 linear_accel_curve = SubResource( 1 )
 scale_amount = 1.5
@@ -99,14 +65,14 @@ color_ramp = SubResource( 3 )
 [node name="CPUParticles" type="CPUParticles" parent="."]
 transform = Transform( 0.6881, -0.00540751, -0.725586, -0.209711, 0.787532, -0.207517, 0.694651, 0.243108, 0.656096, 0.501135, 0.296012, 0 )
 lifetime = 2.31
-speed_scale = 1.1
+speed_scale = 1.4
 explosiveness = 0.9
 mesh = ExtResource( 2 )
 direction = Vector3( 0, 1, -1 )
 spread = 33.06
 gravity = Vector3( 0, -20, 0 )
 initial_velocity = 12.0
-angular_velocity = 10.0
+angular_velocity = 240.4
 angular_velocity_random = 1.0
 linear_accel_curve = SubResource( 1 )
 scale_amount = 1.5
