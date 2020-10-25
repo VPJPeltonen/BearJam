@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/script/controllers/Food.gd" type="Script" id=1]
-[ext_resource path="res://assets/textures/rat_sprites.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/enemies 128x128.png" type="Texture" id=2]
 [ext_resource path="res://src/script/controllers/SpritePerspective.gd" type="Script" id=3]
 
 [sub_resource type="CubeMesh" id=1]
@@ -13,46 +13,46 @@ albedo_color = Color( 1, 0.160784, 0.0509804, 1 )
 [sub_resource type="ConvexPolygonShape" id=3]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[sub_resource type="AtlasTexture" id=4]
-flags = 3
+[sub_resource type="AtlasTexture" id=9]
+flags = 2
 atlas = ExtResource( 2 )
-region = Rect2( 384, 0, 128, 128 )
+region = Rect2( 384, 768, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=5]
-flags = 3
+[sub_resource type="AtlasTexture" id=10]
+flags = 2
 atlas = ExtResource( 2 )
-region = Rect2( 128, 0, 128, 128 )
+region = Rect2( 128, 768, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=6]
-flags = 3
+[sub_resource type="AtlasTexture" id=11]
+flags = 2
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 128, 128 )
+region = Rect2( 256, 1024, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=7]
-flags = 3
+[sub_resource type="AtlasTexture" id=12]
+flags = 2
 atlas = ExtResource( 2 )
-region = Rect2( 256, 0, 128, 128 )
+region = Rect2( 0, 768, 128, 128 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 9 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ) ],
+"frames": [ SubResource( 10 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ) ],
-"loop": true,
-"name": "front",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 11 ) ],
 "loop": true,
 "name": "back",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ) ],
+"loop": true,
+"name": "front",
 "speed": 5.0
 } ]
 
@@ -76,6 +76,7 @@ shape = SubResource( 3 )
 ]]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.06968, 0 )
 billboard = 2
+alpha_cut = 2
 frames = SubResource( 8 )
 animation = "right"
 script = ExtResource( 3 )

@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/script/controllers/Food.gd" type="Script" id=1]
 [ext_resource path="res://src/script/controllers/SpritePerspective.gd" type="Script" id=2]
-[ext_resource path="res://assets/textures/froge_sprites.png" type="Texture" id=3]
-[ext_resource path="res://assets/textures/froge_jump_sprites.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/enemies 128x128.png" type="Texture" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -15,89 +14,89 @@ albedo_color = Color( 0.32549, 1, 0.0509804, 1 )
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 7
+flags = 2
 atlas = ExtResource( 3 )
-region = Rect2( 128, 0, 128, 128 )
+region = Rect2( 384, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 7
+flags = 2
 atlas = ExtResource( 3 )
-region = Rect2( 384, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 7
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 7
-atlas = ExtResource( 3 )
-region = Rect2( 256, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 7
-atlas = ExtResource( 4 )
-region = Rect2( 256, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 7
-atlas = ExtResource( 4 )
 region = Rect2( 128, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=12]
-flags = 7
-atlas = ExtResource( 4 )
+[sub_resource type="AtlasTexture" id=6]
+flags = 2
+atlas = ExtResource( 3 )
+region = Rect2( 256, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 2
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=13]
-flags = 7
-atlas = ExtResource( 4 )
-region = Rect2( 384, 0, 128, 128 )
+[sub_resource type="AtlasTexture" id=8]
+flags = 2
+atlas = ExtResource( 3 )
+region = Rect2( 256, 128, 128, 128 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="AtlasTexture" id=9]
+flags = 2
+atlas = ExtResource( 3 )
+region = Rect2( 0, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 2
+atlas = ExtResource( 3 )
+region = Rect2( 384, 128, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 2
+atlas = ExtResource( 3 )
+region = Rect2( 128, 128, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ SubResource( 4 ) ],
-"loop": true,
-"name": "left",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "front",
+"name": "left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 6 ) ],
 "loop": true,
 "name": "back",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "front",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ) ],
 "loop": true,
 "name": "jump_back",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "jump_front",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "jump_right",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 11 ) ],
 "loop": true,
 "name": "jump_left",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 12 ) ],
-"loop": true,
-"name": "jump_front",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 13 ) ],
-"loop": true,
-"name": "jump_right",
-"speed": 5.0
 } ]
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=13]
 extents = Vector3( 0.185061, 0.169403, 0.127766 )
 
 [node name="Frog" type="Area" groups=[
@@ -120,7 +119,8 @@ shape = SubResource( 3 )
 ]]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.09184, 0 )
 billboard = 2
-frames = SubResource( 8 )
+alpha_cut = 2
+frames = SubResource( 12 )
 animation = "jump_right"
 script = ExtResource( 2 )
 
@@ -128,5 +128,5 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.395345, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 [connection signal="body_entered" from="." to="." method="_on_Food_body_entered"]
