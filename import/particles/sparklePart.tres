@@ -1,0 +1,18 @@
+[gd_resource type="ArrayMesh" load_steps=2 format=2]
+
+[ext_resource path="res://import/particles/Materialparticles.material" type="Material" id=1]
+
+[resource]
+resource_name = "Plane022"
+surfaces/0 = {
+"aabb": AABB( -0.5625, -0.5625, -0.00867462, 1.125, 1.12501, 9.99961e-06 ),
+"array_data": PoolByteArray( 0, 0, 16, 191, 0, 0, 16, 63, 1, 32, 14, 188, 0, 0, 127, 0, 126, 0, 0, 127, 184, 49, 24, 53, 0, 0, 16, 191, 0, 0, 16, 191, 1, 32, 14, 188, 0, 0, 127, 0, 127, 0, 0, 127, 184, 49, 96, 53, 0, 0, 16, 63, 0, 0, 16, 191, 1, 32, 14, 188, 0, 0, 127, 0, 126, 0, 0, 127, 72, 50, 96, 53, 0, 0, 16, 63, 0, 0, 16, 63, 1, 32, 14, 188, 0, 0, 127, 0, 127, 0, 0, 127, 72, 50, 24, 53 ),
+"array_index_data": PoolByteArray( 0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 2, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 6,
+"material": ExtResource( 1 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 4
+}

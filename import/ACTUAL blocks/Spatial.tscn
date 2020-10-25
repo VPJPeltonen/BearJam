@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://import/particles/sparklePart.tres" type="ArrayMesh" id=2]
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0.312785, 0.486364 ), 0.0, 0.0, 0, 0, Vector2( 0.452055, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.582192, 0.504545 ), 0.0, 0.0, 0, 0, Vector2( 0.748858, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.763855, 1 )
+colors = PoolColorArray( 0.827451, 0.572549, 0.0509804, 1, 0.827451, 0.572549, 0.0509804, 0 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+transform = Transform( 3.2658, 0, 0, 0, 1, 0, 0, 0, 3.2658, 0, 0.0757906, 0 )
+lifetime = 2.61
+mesh = ExtResource( 2 )
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+gravity = Vector3( 0, 1, 0 )
+angular_velocity = 211.2
+angular_velocity_random = 0.73
+scale_amount = 0.2
+scale_amount_random = 0.08
+scale_amount_curve = SubResource( 2 )
+color_ramp = SubResource( 1 )
