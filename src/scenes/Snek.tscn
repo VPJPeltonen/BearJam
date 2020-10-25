@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://src/script/controllers/Snek.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Tail_Segment.tscn" type="PackedScene" id=2]
@@ -60,6 +60,66 @@ flags = 2
 atlas = ExtResource( 9 )
 region = Rect2( 256, 1024, 128, 128 )
 
+[sub_resource type="AtlasTexture" id=16]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 768, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 1792, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 384, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 896, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 640, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 1280, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 1408, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 1664, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 1920, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 1152, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 256, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 2
+atlas = ExtResource( 9 )
+region = Rect2( 256, 128, 128, 128 )
+
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ SubResource( 10 ) ],
@@ -80,6 +140,66 @@ animations = [ {
 "frames": [ SubResource( 13 ) ],
 "loop": true,
 "name": "front",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "red_back",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "red_left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "blue_right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ) ],
+"loop": true,
+"name": "blue_back",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "green_back",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ) ],
+"loop": true,
+"name": "red_front",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 22 ) ],
+"loop": true,
+"name": "blue_front",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "green_left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ) ],
+"loop": true,
+"name": "blue_left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 28 ) ],
+"loop": true,
+"name": "green_front",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 19 ) ],
+"loop": true,
+"name": "red_right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 30 ) ],
+"loop": true,
+"name": "green_right",
 "speed": 5.0
 } ]
 
@@ -169,5 +289,5 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.53362, 0 )
 billboard = 2
 alpha_cut = 2
 frames = SubResource( 14 )
-animation = "right"
+animation = "green_right"
 script = ExtResource( 8 )

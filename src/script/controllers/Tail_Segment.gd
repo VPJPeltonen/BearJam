@@ -8,6 +8,7 @@ var mesh_dirs = [Vector3(0,0,0),Vector3(0,90,0),Vector3(0,180,0),Vector3(0,270,0
 var directions = [Vector3(0,0,1),Vector3(-1,0,0),Vector3(0,0,-1),Vector3(1,0,0)]
 var previous_pos
 
+var mode = "Cheese"
 var tail
 var head
 

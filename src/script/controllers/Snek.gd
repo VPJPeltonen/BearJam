@@ -59,32 +59,16 @@ func food_eaten(type):
 			mode = "Yellow"
 			add_tail()
 			GAME.go_faster()
-			$Visuals/Red.hide()
-			$Visuals/Blue.hide()
-			$Visuals/Yellow.show()
-			$Visuals/Green.hide()
 		"Rat":
 			mode = "Red"
-			$Visuals/Red.show()
-			$Visuals/Blue.hide()
-			$Visuals/Yellow.hide()
-			$Visuals/Green.hide()
 			add_tail()
 			GAME.go_faster()
 		"Frog":
 			mode = "Green"
-			$Visuals/Red.hide()
-			$Visuals/Blue.hide()
-			$Visuals/Yellow.hide()
-			$Visuals/Green.show()
 			add_tail()
 			GAME.go_faster()
 		"Beetle":
 			mode = "Blue"
-			$Visuals/Red.hide()
-			$Visuals/Blue.show()
-			$Visuals/Yellow.hide()
-			$Visuals/Green.hide()
 			add_tail()
 			GAME.go_faster()
 		_:

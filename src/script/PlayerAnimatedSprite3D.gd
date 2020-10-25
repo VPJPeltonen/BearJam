@@ -7,8 +7,11 @@ func _process(delta):
 
 func play_animation(type):
 	var string = type
-	#if get_parent().in_air:
-	#	string = "jump_" + string
-	#if get_parent().angry:
-	#	string = "angry_" + string
+	match get_parent().mode:
+		"Blue":
+			string = "blue_" + string
+		"Green":
+			string = "green_" + string
+		"Red":
+			string = "red_" + string
 	play(string)
