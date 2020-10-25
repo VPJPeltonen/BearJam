@@ -3,8 +3,9 @@ extends AnimatedSprite3D
 var forward = Vector3(0,0,1)
 
 func play_animation(type):
+	var string = type
 	if get_parent().in_air:
-		type = "jump_" + type
+		string = "jump_" + string
 	if get_parent().angry:
-		type = "angry_" + type
-	play(type)
+		string = "angry_" + string
+	play(string)

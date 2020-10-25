@@ -100,6 +100,7 @@ func add_tail():
 		tail.add_tail()
 
 func lose_tail():
+	$Hurt.play()
 	if tail == null:
 		print("DIEEE")
 		frozen = true

@@ -5,7 +5,7 @@ export var move_range = 3
 export var dir = Vector3(0,0,1)
 
 var angry = false
-var angry_cooldown = 3
+var angry_cooldown = 5
 #var current_rot = 0
 var directions = [Vector3(0,0,1),Vector3(-1,0,0),Vector3(0,0,-1),Vector3(1,0,0)]
 var in_air = false
@@ -17,7 +17,7 @@ func on_beat():
 	angry_cooldown -= 1
 	if angry_cooldown <= 0:
 		angry = !angry
-		angry_cooldown = 3
+		angry_cooldown = 5
 	$AnimatedSprite3D.forward = -dir
 	match type:
 		"Frog":
@@ -26,7 +26,7 @@ func on_beat():
 			if moves_left <= 0:
 				moves_left = move_range
 				dir = -dir
-		"Beetle":
+		"Beetle":	
 			move(1)
 			if moves_left <= 0:
 				moves_left = move_range
@@ -61,7 +61,7 @@ func horizontal_movement():
 func _on_Food_body_entered(body):
 	if body.is_in_group("Snake"):
 		if angry:
-			pass
+			body.lose_tail()
 		else:
 			body.food_eaten(type)
 			queue_free()
