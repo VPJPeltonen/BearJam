@@ -13,6 +13,7 @@ func restart():
 		child.queue_free()
 	var new_map = test_map.instance()
 	add_child(new_map)
+	new_map.connect("restart", self, "_on_TestMap_restart")
 
 func _on_TestMap_restart():
 	restart()
