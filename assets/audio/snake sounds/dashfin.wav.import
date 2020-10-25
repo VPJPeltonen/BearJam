@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dashfin.wav-4d19ee41d1dc69df0882765cfce3987f.sample"
+
+[deps]
+
+source_file="res://assets/audio/snake sounds/dashfin.wav"
+dest_files=[ "res://.import/dashfin.wav-4d19ee41d1dc69df0882765cfce3987f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
