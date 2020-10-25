@@ -5,6 +5,7 @@ export var move_range = 3
 export var dir = Vector3(0,0,1)
 
 var angry = false
+var angry_cooldown = 3
 #var current_rot = 0
 var directions = [Vector3(0,0,1),Vector3(-1,0,0),Vector3(0,0,-1),Vector3(1,0,0)]
 var in_air = false
@@ -12,8 +13,8 @@ var in_air = false
 onready var moves_left = move_range
 onready var current_rot = directions.find(dir)
 
-
 func on_beat():
+	angry_cooldown -= 1
 	$AnimatedSprite3D.forward = -dir
 	match type:
 		"Frog":
