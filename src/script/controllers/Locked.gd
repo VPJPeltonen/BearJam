@@ -3,8 +3,12 @@ extends StaticBody
 export var color = "Red"
 
 func _ready():
-	set_up()
-	
+	pass
+	#set_up()
+
+func _open():
+	$door/AnimationPlayer.play("Door Open")	
+
 func set_up():
 	match color:
 		"Red":
@@ -19,3 +23,7 @@ func set_up():
 			$Red.hide()
 			$Blue.hide()
 			$Green.show()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	queue_free()
