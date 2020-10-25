@@ -7,6 +7,7 @@ onready var tracker = get_parent().get_node("PlayerTracker")
 onready var sprites = get_tree().get_nodes_in_group("3dSprite")
 
 func _process(delta):
+	sprites = get_tree().get_nodes_in_group("3dSprite")
 	global_transform.origin = global_transform.origin.linear_interpolate(target.global_transform.origin, camera_speed*delta)#target.global_transform.origin
 	look_at(tracker.global_transform.origin,Vector3.UP)
 	if sprites.empty():
@@ -15,7 +16,7 @@ func _process(delta):
 		if sprite == null:
 			return
 		var sprite_forward = sprite.forward
-		var view_vector = global_transform.origin - sprite.global_transform.origin
+		var view_vector = $Position3D.global_transform.origin - sprite.global_transform.origin
 		view_vector = view_vector.normalized()
 		sprite_forward = sprite_forward.normalized()
 		var dot = view_vector.dot(sprite_forward)
