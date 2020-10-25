@@ -7,3 +7,7 @@ func start_game():
 
 func _on_LoseScreen_reset():
 	emit_signal("restart")
+
+func _on_WinSceen_reset():
+	emit_signal("restart")
+

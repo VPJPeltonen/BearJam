@@ -25,10 +25,8 @@ func _on_StartButton_pressed():
 	var map = $Map.get_children()[0]
 	map.start_game()
 
-
 func _on_ExitButton_pressed():
 	pass # Replace with function body.
-
 
 func _on_CreditsButton_pressed():
 	pass # Replace with function body.
@@ -37,6 +35,5 @@ func _on_CreditsButton_pressed():
 func _on_ControlsButton_pressed():
 	pass # Replace with function body.
 
-
 func _on_TestMap2_restart():
-	pass # Replace with function body.
+	restart()
