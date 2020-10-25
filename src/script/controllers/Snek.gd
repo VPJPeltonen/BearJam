@@ -97,6 +97,7 @@ func horizontal_movement():
 	if $Area.get_overlapping_bodies().size() == 0 :
 		move_and_collide(Vector3(0,-1,0)*GAME.grid_size)
 	if jump_prepared:
+		$Jump.play()
 		jump_prepared = false
 		move_and_collide(Vector3(0,1,0)*GAME.grid_size)
 		
@@ -105,6 +106,7 @@ func move():
 	var previous_pos = global_transform.origin
 	var collission
 	if speed_prepared:
+		$Dash.play()
 		collission = move_and_collide(dir*GAME.grid_size*2)
 		speed_prepared = false
 	else:
