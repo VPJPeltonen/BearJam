@@ -29,11 +29,18 @@ func _on_ExitButton_pressed():
 	pass # Replace with function body.
 
 func _on_CreditsButton_pressed():
-	pass # Replace with function body.
+	$Node2D/Button.hide()
+	$Node2D/Credits.show()
 
 
 func _on_ControlsButton_pressed():
-	pass # Replace with function body.
+	$Node2D/Controls.show()
+	$Node2D/Button.hide()
 
 func _on_TestMap2_restart():
 	restart()
+
+func _on_Button_pressed():
+	$Node2D/Controls.hide()
+	$Node2D/Button.show()
+	$Node2D/Credits.hide()
