@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/scenes/TestMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/script/controllers/Main.gd" type="Script" id=2]
@@ -24,6 +24,9 @@ region_rect = Rect2( 0, 0, 404, 96 )
 [sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 456, 135 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "slightlyrotate"
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 2 )
@@ -53,7 +56,7 @@ __meta__ = {
 anchor_right = 0.5
 margin_left = 283.0
 margin_top = 510.0
-margin_right = 30.5
+margin_right = 127.0
 margin_bottom = 602.0
 rect_pivot_offset = Vector2( 629.212, 305.161 )
 custom_styles/hover = SubResource( 1 )
@@ -67,7 +70,7 @@ __meta__ = {
 anchor_right = 0.5
 margin_left = 687.0
 margin_top = 733.0
-margin_right = 353.5
+margin_right = 450.0
 margin_bottom = 852.0
 rect_pivot_offset = Vector2( 629.212, 305.161 )
 custom_styles/hover = SubResource( 2 )
@@ -81,7 +84,7 @@ __meta__ = {
 anchor_right = 0.5
 margin_left = 540.0
 margin_top = 650.0
-margin_right = 347.5
+margin_right = 444.0
 margin_bottom = 752.0
 rect_pivot_offset = Vector2( 629.212, 305.161 )
 custom_styles/hover = SubResource( 3 )
@@ -95,7 +98,7 @@ __meta__ = {
 anchor_right = 0.5
 margin_left = 402.0
 margin_top = 541.0
-margin_right = 261.5
+margin_right = 358.0
 margin_bottom = 682.0
 rect_pivot_offset = Vector2( 629.212, 305.161 )
 custom_styles/hover = SubResource( 4 )
@@ -104,6 +107,9 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Button"]
+anims/slightlyrotate = SubResource( 5 )
 
 [node name="Map" type="Spatial" parent="."]
 
