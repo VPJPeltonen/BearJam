@@ -1,6 +1,6 @@
 extends Position3D
 
-var track_speed = 0.5
+var track_speed = 1.5
 
 onready var snek = get_parent().get_node("Snek/View_Pos")
 
