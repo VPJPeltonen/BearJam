@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jazzo3.ogg-d09dc0742842cd2fa4f37b12215a5ab2.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/jazzo3.ogg"
+dest_files=[ "res://.import/jazzo3.ogg-d09dc0742842cd2fa4f37b12215a5ab2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
