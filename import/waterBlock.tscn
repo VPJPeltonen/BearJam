@@ -39,7 +39,7 @@ input_name = "uv"
 
 [sub_resource type="VisualShader" id=11]
 code = "shader_type spatial;
-render_mode specular_schlick_ggx;
+render_mode specular_schlick_ggx, unshaded;
 
 uniform sampler2D tex_frg_2 : hint_albedo;
 
@@ -97,7 +97,8 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -950, 370 )
+graph_offset = Vector2( -63, 201 )
+flags/unshaded = true
 nodes/fragment/2/node = SubResource( 6 )
 nodes/fragment/2/position = Vector2( -120, 220 )
 nodes/fragment/5/node = SubResource( 7 )
@@ -188,7 +189,7 @@ texture = SubResource( 28 )
 
 [sub_resource type="VisualShader" id=30]
 code = "shader_type spatial;
-render_mode specular_schlick_ggx;
+render_mode specular_schlick_ggx, unshaded;
 
 uniform sampler2D tex_frg_2;
 
@@ -254,7 +255,8 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -496.976, -31.7521 )
+graph_offset = Vector2( -63, 201 )
+flags/unshaded = true
 nodes/vertex/0/position = Vector2( 500, 180 )
 nodes/vertex/3/node = SubResource( 25 )
 nodes/vertex/3/position = Vector2( 60, 300 )
@@ -295,6 +297,12 @@ shader = SubResource( 30 )
 
 [node name="waterBlock" instance=ExtResource( 1 )]
 
+[node name="WATER ARMETURE" parent="." index="0"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
+
 [node name="Plane011" parent="WATER ARMETURE/Skeleton" index="0"]
 material/0 = SubResource( 12 )
 material/1 = SubResource( 31 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "WaterMove"

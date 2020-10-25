@@ -6,8 +6,8 @@ void fragment() {
 	vec2 newuv = UV;
     newuv.x += TIME;
 	if(c.g > 0.95){
-		float noiseValue = texture(NOISE_PATTERN, UV).x;
-   		c = vec3(noiseValue)/5.0;
+		float noiseValue = texture(NOISE_PATTERN, UV).x+cos(TIME/2.0);
+   		c = vec3(noiseValue)/10.0;
 		//c = vec3(0.0);
 	}
 	//c.r = 0.0;
